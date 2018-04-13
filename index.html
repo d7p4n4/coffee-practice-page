@@ -1,0 +1,841 @@
+<!doctype html> 
+<html lang="en">
+  <head>
+    <!-- Required meta tags --> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <!-- Bootstrap CSS --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+    <!-- font fam -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Pacifico" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>    
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <title>Practice page</title> 
+    
+    <link href="reset.css" type="text/css" rel="stylesheet">
+        
+    <!-- main styles -->
+
+    <style>
+      html {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+      
+      @media (min-width: 992px) {
+        html {
+          font-size: 18px;
+        }
+      }
+    
+     a {
+        text-decoration: none;
+        color: inherit;
+      }
+      
+      a:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+      
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+      
+      /* header */
+      
+      header {
+        width: 100%;
+        height: auto;
+        padding: 2rem 1rem 0rem 1rem;
+        background-image: url(assets/pic01.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      .logo {
+        font-family: pacifico;
+        color: whitesmoke;
+        font-size: 2rem;
+        text-align: center;
+      }
+      
+      .nav-btn {
+        font-family: pacifico;
+        color: whitesmoke;
+        font-size: 1.25rem;
+        text-align: center;
+        transition: all .5s ease;
+      }
+      
+      .nav-btn::before {
+        content: attr(text-data);
+        position: absolute;
+        width: 4.25rem;
+        height: 4.25rem;
+        background: whitesmoke;
+        border-radius: 50%;
+        top: -65%;
+        left: calc(50% - 2rem);
+        clip-path: circle(0 at 50% 50%);
+        transition: all .3s cubic-bezier(.5, 0, 1, 1);
+        transition-delay: .1s;
+        font-size: 1.25rem;
+        font-family: pacifico;
+        color: rgba(0,0,0,.8);
+        line-height: 4.25rem;
+      }
+      
+      .nav-btn:hover:before {
+        clip-path: circle(4rem);
+        cursor: pointer;
+      }
+      
+      .nav-btn:hover {
+        cursor: pointer;
+      }
+      
+      @media (min-width: 1200px) {
+        header {
+          padding: 2rem 12rem 0rem 12rem;
+        }
+      }
+      
+      .title {
+        font-family: pacifico;
+        font-size: 5rem;
+        text-align: center;
+        color: rgb(244,228,192);
+        line-height: 3.5rem;
+      }
+      
+      .little-title {
+        font-family: oswald;
+        font-size: 2.75rem;
+        text-align: center;
+        color: whitesmoke;
+        text-transform: uppercase;
+      }
+      
+      .drop {
+        width: calc(100% + 2rem);
+        height: 5rem;
+        background-image: url(assets/drop.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        left: -1rem;
+        bottom: 0;
+      }
+      
+      @media (min-width: 1200px) {
+        .drop {
+          width: calc(100% + 24rem);
+          left: -12rem;
+        }
+      }
+      
+      .down-btn {
+        width: 5rem;
+        height: 5rem;
+        border: .2rem solid rgb(250,250,250);
+        border-radius: 50%;
+        text-align: center;
+        position: relative;
+        left: calc(50% - 2.5rem);
+        overflow: hidden;
+      }
+      
+      .down-arrow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: 50% 50%;
+        transform: translateY(-50%) translateX(-50%) scale(.75);
+      }
+      
+      .down-arr-first {
+        top: -50%;
+        opacity: 0;
+        left: 0%;
+        transform: scale(.75) translateY(0);
+      }
+      
+      .down-btn:hover .down-arrow {
+        animation: down-arr-sec cubic-bezier(.56,0,1,1) .5s;
+        animation-fill-mode: both;
+      }
+      
+      .down-btn:hover .down-arr-first {
+        animation: down-arr-first cubic-bezier(.56,0,1,1) .5s;
+        animation-fill-mode: both;
+      }
+      
+      .down-btn:hover {
+        cursor: pointer;
+        animation: boxShadow ease 1.5s;
+      }
+      
+      @keyframes boxShadow {
+        0% {box-shadow: 0 0 0 0 rgba(250,250,250,0);}
+        30% {box-shadow: 0 0 0 0 rgba(250,250,250,1);}
+        89% {box-shadow: 0 0 0 15px rgba(250,250,250,0);}
+      }
+      
+      @keyframes down-arr-first {
+        0% {top: -50%; opacity: 0;}
+        
+        100% {top: 50%;opacity: 1;transform: translateY(-50%) scale(.75);}
+      }
+      
+      @keyframes down-arr-sec {
+        0% {top: 50%;opacity: 1;}
+        
+        100% {top: 100%;opacity: 0;}
+      }
+        
+      /* wrapper-2 */
+      
+      .wrapper-2 {
+        padding: 2rem 1rem 2rem 1rem;
+        background: rgb(250,250,250);
+        position: relative;
+        width: 100%;
+        top: -.1rem;
+      }
+      
+      .cup {
+        width: 100%;
+        position: relative;
+      }
+      
+      .wrapper-2 .logo {
+        font-size: 1.5rem;
+        position: absolute;
+        z-index: 10;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        transform-origin: center center;
+      }
+      
+      .small-title {
+        font-family: pacifico;
+        color: rgb(177,175,150);
+        text-align: center;
+        font-size: 3rem;;
+      }
+      
+      .smaller-title {
+        color: rgba(0,0,0,.8);
+        font-family: oswald;
+        font-size: 1.75rem;
+        text-align: center;
+        letter-spacing: -.1rem;
+      }
+      
+      .text {
+        color: rgba(0,0,0,.8);
+        font-family: oswald;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.3rem;
+      }
+      
+      @media (min-width: 1200px) {
+        .wrapper-2 {
+          padding: 2rem 12rem;
+        }
+      }
+      
+      /* wrapper-3 */
+      
+      .wrapper-3 {
+        position: relative;
+        width: 100%;
+        padding: 5rem 1rem;
+        background-image: url(assets/pic02.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      
+      .menu {
+        width: 7rem;
+        height: 7rem;
+        position: relative;
+        left: calc(50% - 3.5rem);
+        border: .2rem solid rgb(250,250,250);
+        border-radius: 50%;
+        text-align: center;
+      }
+      
+      .menu-before {
+        content: attr(text-data);
+        position: absolute;
+        width: 103%;
+        height: 103%;
+        background: rgb(250,250,250);
+        top: -.05rem;
+        left: 0;
+        border-radius: 50%;
+        text-align: center;
+        clip-path: circle(0 at 50% 50%);
+        transition: all .5s cubic-bezier(.56, 0, 1, 1);
+        z-index: 10;
+      }
+      
+      .menu:hover .menu-before {
+        clip-path: circle(8rem);
+        cursor: pointer;
+      }
+      
+      .menu:hover {
+        cursor: pointer;
+      }
+      
+      .menu-title {
+        color: rgb(250,250,250);
+        font-family: oswald;
+        font-size: 1.5rem;
+        letter-spacing: -.1rem;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: 500;
+      }
+      
+      .menu-title span {
+        text-transform: uppercase;
+      }
+      
+      .menu-before .menu-title {
+        color: rgb(177,175,150);
+      }
+      
+      @media (min-width: 1200px) {
+        .wrapper-3 {
+          padding: 5rem 12rem;
+        }
+      }
+      
+      /* wrapper-4 */
+      
+      .wrapper-4 {
+        position: relative;
+        width: 100%;
+        padding: 3rem 1rem;
+        background: rgb(250,250,250);
+      }
+      
+      .coffe-machine {
+        width: 45%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .machine-col {
+        display: none;
+      }
+      
+      .wrapper-5 {
+        position: relative;
+        width: 100%;
+        padding: .5rem 1rem 3rem 1rem;
+        background: rgb(240,240,240);
+      }
+      
+      .wrapper-5 .menu-before {
+        background: rgb(177,177,177);
+      }
+      
+      .wrapper-5 .menu:hover .menu-before {
+        clip-path: circle(8rem);
+      }
+      
+      .wrapper-5 .menu-before .menu-title {
+        color: rgb(250,250,250);
+      }
+      
+      .wrapper-5 .menu {
+        border: .2rem rgb(177,177,177) solid;
+      }
+      
+      .wrapper-5 .menu-title {
+        color: rgb(177,175,150);
+      }
+      
+      @media (min-width: 1200px) {
+        .wrapper-4 {
+          padding: 3rem 12rem;
+        }
+        .wrapper-5 {
+          padding: .5rem 12rem 3rem 12rem;
+        }
+      }
+      
+      /* wrapper-6 */
+      
+      .wrapper-6 {
+        position: relative;
+        width: 100%;
+        padding: 3rem 1rem;
+        background-image: url(assets/pic03.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      
+      .wrapper-6 .small-title,
+      .wrapper-7 .small-title {
+        color: rgb(250,235,194);
+      }
+      
+      .wrapper-6 .smaller-title,
+      .wrapper-6 .text,
+      .wrapper-7 .smaller-title {
+        color: whitesmoke;
+      }
+      
+      .coffe-bean {
+        width: 100%;
+      }  
+      
+      @media (min-width: 1200px) {
+        .wrapper-6 {
+          padding: 3rem 12rem;
+        }
+      }
+      
+      /* wrapper-7 */
+      
+      .wrapper-7 {
+        position: relative;
+        width: 100%;
+        background: rgb(60,55,52);
+        padding: 3rem 1rem 1rem 1rem;
+      }
+      
+      .wrapper-7 .menu {
+        background: rgb(60,55,52);
+      }
+      
+      .blobs {
+        filter: url("#goo");
+        -webkit-filter: url("#goo");
+        position: relative;
+      }
+      
+      .blob {
+        width: 3rem;
+        height: 3rem;
+        border: .1rem solid rgb(250,250,250);
+        border-radius: 50%;
+        position: absolute;
+        top: 2rem;
+        background: rgb(60,55,52);
+        z-index: -1;
+      }
+      
+      .blob-right {
+        right: 50%;
+      }
+      
+      .facebook {
+        height: 50%;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .twitter {
+        width: 50%;
+        position: absolute;
+        left: 25%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      
+      @keyframes blob-left {
+        0% {left: 50%; z-index: -1;}
+        80% {left: calc(50% - 9rem);transform: translateX(-15%);z-index: -1;}
+        92% {left: calc(50% - 9rem);transform: translateX(5%);z-index: -1;}
+        100% {left: calc(50% - 9rem);transform: translateX(0);z-index: -1;}
+      }
+            
+      @keyframes blob-right {
+        0% {right: 50%; z-index: -1;}
+        80% {right: calc(50% - 9rem);transform: translateX(15%);z-index: -1;}
+        92% {right: calc(50% - 9rem);transform: translateX(-5%);z-index: -1;}
+        100% {right: calc(50% - 9rem);transform: translateX(0);z-index: -1;}
+      }
+      
+      @keyframes blob-left-disapp {
+        0% {left: calc(50% - 9rem);transform: translateX(0);z-index: -1;}
+        8% {left: calc(50% - 9rem);transform: translateX(-10%);z-index: -1;}
+        100% {left: 50%;transform: translateX(0);z-index: -1;}
+      }
+      
+      @keyframes blob-right-disapp {
+        0% {right: calc(50% - 9rem);transform: translateX(0);z-index: -1;}
+        8% {right: calc(50% - 9rem);transform: translateX(10%);z-index: -1;}
+        100% {right: 50%;transform: translateX(0);z-index: -1;}
+      }
+      
+      .wrapper-7 .menu:hover {
+        cursor: pointer;
+        animation: none;
+      }
+      
+      .wrapper-7 .menu:hover + .blob-left {
+        animation: blob-left cubic-bezier(.56, 0, 1, 1) 1s .15s;
+        animation-fill-mode: both;
+      }
+      
+      .wrapper-7 .menu:hover ~ .blob-right {
+        animation: blob-right cubic-bezier(.56, 0, 1, 1) 1s;
+        animation-fill-mode: both;
+      }
+      
+      .blob-left {
+        animation: blob-left-disapp cubic-bezier(0, 0, .46, 1) 1s;
+        animation-fill-mode: both;
+      }
+      
+      .blob-right {
+        animation: blob-right-disapp cubic-bezier(0, 0, .46, 1) 1s;
+        animation-fill-mode: both;
+        animation-delay: .15s;
+      }
+      
+      .footer-logo {
+        font-size: 1.5rem;
+        font-family: pacifico;
+        color: rgb(90,85,82);
+        text-align: center;
+        line-height: 1.5rem;
+      }
+      
+      .footer {
+        font-size: .8rem;
+        font-family: oswald;
+        text-transform: uppercase;
+        color: rgb(90,85,82);
+        letter-spacing: .1rem;
+        line-height: .8rem;
+        text-align: center;
+      }
+      
+      @media (min-width: 1200px) {
+        .wrapper-7 {
+          padding: 3rem 12rem 1rem 12rem;
+        }
+      }
+      
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      @media (min-width: 528px) {
+        header {
+          padding: 2rem 3rem 0rem 3rem;
+        }
+        .drop {
+          width: calc(100% + 6rem);
+          left: -3rem;
+        }
+        .wrapper-2 {
+          padding: 2rem 3rem;
+        }
+        .wrapper-3 {
+          padding: 5rem 3rem;
+        }
+        .wrapper-4 {
+          padding: 3rem 3rem;
+        }
+        .wrapper-5 {
+          padding: .5rem 3rem 3rem 3rem;
+        }
+        .wrapper-6 {
+          padding: 3rem 3rem;
+        }
+        .wrapper-7 {
+          padding: 3rem 3rem 1rem 3rem;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        header {
+          padding: 2rem 5rem 0rem 5rem;
+        }
+        .logo {
+          text-align: left;
+        }
+        .nav-btn {
+          font-size: 1rem;
+        }
+        .nav-btn::before {
+          top: -90%;
+          line-height: 4rem;
+          width: 4rem;
+          height: 4rem;
+          font-size: 1rem;
+        }
+        .drop {
+          width: calc(100% + 10rem);
+          left: -5rem;
+        }
+        .wrapper-2 {
+          padding: 2rem 5rem;
+        }
+        .wrapper-3 {
+          padding: 5rem 5rem;
+        }
+        .wrapper-4 {
+          padding: 3rem 5rem;
+        }
+        .wrapper-5 {
+          padding: .5rem 5rem 3rem 5rem;
+        }
+        .machine-col {
+          display: block;
+        }
+        .wrapper-6 {
+          padding: 3rem 5rem;
+        }
+        .wrapper-7 {
+          padding: 3rem 5rem 1rem 5rem;
+        }
+        
+      }
+      
+      @media (min-width: 992px) {
+        header {
+          padding: 2rem 9rem 0rem 9rem;
+        }
+        .drop {
+          width: calc(100% + 18rem);
+          left: -9rem;
+        }
+        .wrapper-2 {
+          padding: 2rem 9rem;
+        }
+        .wrapper-3 {
+          padding: 5rem 9rem;
+        }
+        .wrapper-4 {
+          padding: 3rem 9rem;
+        }
+        .smaller-title {
+          font-size: 1.5rem;
+        }
+        .text {
+          font-size: .85rem;
+          line-height: 1.5rem;
+        }
+        .wrapper-5 {
+          padding: .5rem 9rem 3rem 9rem;
+        }
+        .wrapper-6 {
+          padding: 3rem 9rem;
+        }
+        .wrapper-7 {
+          padding: 3rem 9rem 1rem 9rem;
+        }
+        
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header>
+      <div class="row justify-content-center ml-1 mr-1 m-md-0">
+        <div class="col-12 col-md-6 p-0 mb-4 mb-md-0">
+          <h3 class="logo">Cafo</h3>
+        </div>
+        <div class="col-12 col-md-6 p-0 my-auto">
+          <div class="row">
+            <div class="col-3 p-0 m-0">
+              <h4 class="nav-btn" text-data="About">About</h4>
+            </div>
+            <div class="col-3 p-0 m-0">
+              <h4 class="nav-btn" text-data="Menu">Menu</h4>
+            </div>
+            <div class="col-3 p-0 m-0">
+              <h4 class="nav-btn" text-data="Shop">Shop</h4>
+            </div>
+            <div class="col-3 p-0 m-0">
+              <h4 class="nav-btn" text-data="Contact">Contact</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center pt-5 pb-5 mt-4">
+        <div class="col-11">
+          <h1 class="title p-0">Smell it</h1>
+          <h2 class="little-title p-0">taste it</h2>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center mb-4">
+        <div class="col-3">
+          <div class="down-btn">
+            <img class="img-fluid down-arrow down-arr-first" src="assets/down-arrow.png" alt="">
+            <img class="img-fluid down-arrow" src="assets/down-arrow.png" alt="">
+          </div>
+        </div>
+      </div>
+      
+      <div class="drop"></div>
+    </header>
+    
+    <div class="wrapper-2">
+      <div class="row justify-content-center">
+        <div class="col-4 col-md-3 col-xl-2 p-0">
+          <img class="img-fluid cup" src="assets/cup.png" alt="">
+          <h6 class="logo">Cafo</h6>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center mt-3 mb-4">
+        <div class="col-11">
+          <h3 class="small-title p-0 m-0">Discover our</h3>
+          <h3 class="smaller-title">Distinctive style</h3>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center mt-4 mb-0 pb-0">
+        <div class="col-12 pl-4 pr-4 pb-0 mb-0 pl-md-3 pr-md-3">
+          <p class="text">Lorem ipsum dolor sit amet, per at brute partem. Tota vidisse utroque sit ea, cum cu propriae appetere gloriatur. Dolore hendrerit in quo, fugit inani soleat vim ei. Nulla debitis laboramus in his, quo id delicata omittantur, delenit constituto at pri. Vim quis discere nominavi ex, qui ea dicat etiam definitiones. No adipisci tractatos quo. Ea tempor oblique habemus nec, sumo fierent vix cu. Cu prima malis sed, vidit nostro cu duo. No vix rebum habemus, eum at doming eleifend adversarium.</p>
+        </div>
+      </div>
+           
+    </div>
+    
+    <div class="wrapper-3">
+      <div class="menu">
+        <div class="menu-before">
+          <h6 class="menu-title">See our<br><span>menu</span></h6>
+        </div>
+        <h6 class="menu-title">See our<br><span>menu</span></h6>
+      </div>
+    </div>
+    
+    <div class="wrapper-4">
+      <div class="row justify-content-center">
+        <div class="col-6 align-self-center machine-col">
+          <img src="assets/coffee-machine.png" class="img-fluid coffe-machine" alt="">
+        </div>
+        <div class="col-12 col-md-6 p-0">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <h3 class="small-title p-0 m-0">Take it</h3>
+              <h3 class="smaller-title">To your home</h3>
+            <div class="col-12 pl-4 pr-4 pb-0 mb-0 mt-4 pl-md-3 pr-md-3">
+              <p class="text">Lorem ipsum dolor sit amet, per at brute partem. Tota vidisse utroque sit ea, cum cu propriae appetere gloriatur. Dolore hendrerit in quo, fugit inani soleat vim ei. Nulla debitis laboramus in his, quo id delicata omittantur, delenit constituto at pri.</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wrapper-5">
+      <div class="row justify-cuntent-center">
+        <div class="col-6"></div>
+        <div class="col-12 col-md-6">
+          <div class="menu">
+            <div class="menu-before">
+              <h6 class="menu-title">Browse<br><span>our shop</span>
+            </div>
+            <h6 class="menu-title">Browse<br><span>our shop</span></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wrapper-6">
+      <div class="row justify-content-center mt-3 mb-4">
+        <div class="col-10">
+          <h3 class="small-title p-0 m-0">Freshly</h3>
+          <h3 class="smaller-title">Blended</h3>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center mt-4 mb-0 pb-0">
+        <div class="col-12 pl-4 pr-4 pb-0 mb-0 pr-md-3 pl-md-3">
+          <p class="text">Lorem ipsum dolor sit amet, per at brute partem. Tota vidisse utroque sit ea, cum cu propriae appetere gloriatur. Dolore hendrerit in quo, fugit inani soleat vim ei. Nulla debitis laboramus in his, quo id delicata omittantur, delenit constituto at pri. Vim quis discere nominavi ex, qui ea dicat etiam definitiones. No adipisci tractatos quo. Ea tempor oblique habemus nec, sumo fierent vix cu. Cu prima malis sed, vidit nostro cu duo. No vix rebum habemus, eum at doming eleifend adversarium.</p>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center mt-4">
+        <div class="col-2 col-md-1">
+          <img class="img-fluid coffe-bean" src="assets/coffee-bean.png" alt="">
+        </div>
+      </div>
+           
+    </div>
+    
+    <div class="wrapper-7">
+      <div class="row justify-content-center mt-3 mb-4">
+        <div class="col-10">
+          <h3 class="small-title p-0 m-0">Visit us</h3>
+          <h3 class="smaller-title">In your town</h3>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center p-0">
+        <div class="col-9 p-0">
+          <div class="blobs">
+            <div class="menu big-blob">
+              <h6 class="menu-title">See<br><span>where</span></h6>          
+            </div>
+            <div class="blob blob-left">
+              <img src="assets/facebook.png" class="img-fluid facebook" alt="">
+            </div>
+            <div class="blob blob-right">
+              <img src="assets/twitter.png" class="img-fluid twitter" alt=""/>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <svg width="0" height="0">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/>
+            <feBlend in="SourceGraphic" in2="goo"/>
+          </filter>
+        </defs>
+      </svg>
+      
+      <div class="row justify-content-center mt-4">
+        <div class="col-12">
+          <p class="footer-logo p-0 m-0 mb-2">Cafo</p>
+          <p class="footer p-0 m-0">all rights reserved</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Optional JavaScript --> 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+
+  </body> 
+</html>
