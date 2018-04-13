@@ -110,7 +110,7 @@
       
       .title {
         font-family: pacifico;
-        font-size: 5rem;
+        font-size: 4.5rem;
         text-align: center;
         color: rgb(244,228,192);
         line-height: 3.5rem;
@@ -185,8 +185,7 @@
       }
       
       @keyframes boxShadow {
-        0% {box-shadow: 0 0 0 0 rgba(250,250,250,0);}
-        30% {box-shadow: 0 0 0 0 rgba(250,250,250,1);}
+        0% {box-shadow: 0 0 0 0 rgba(250,250,250,1);}
         89% {box-shadow: 0 0 0 15px rgba(250,250,250,0);}
       }
       
@@ -281,10 +280,10 @@
       .menu-before {
         content: attr(text-data);
         position: absolute;
-        width: 103%;
-        height: 103%;
+        width: 100%;
+        height: 100%;
         background: rgb(250,250,250);
-        top: -.05rem;
+        top: 0;
         left: 0;
         border-radius: 50%;
         text-align: center;
@@ -300,6 +299,7 @@
       
       .menu:hover {
         cursor: pointer;
+        border: none;
       }
       
       .menu-title {
@@ -495,6 +495,7 @@
       .wrapper-7 .menu:hover {
         cursor: pointer;
         animation: none;
+        border: .2rem solid rgb(250,250,250);
       }
       
       .wrapper-7 .menu:hover + .blob-left {
@@ -550,6 +551,9 @@
       @media (min-width: 528px) {
         header {
           padding: 2rem 3rem 0rem 3rem;
+        }
+        .title {
+          font-size: 5rem;
         }
         .drop {
           width: calc(100% + 6rem);
@@ -682,8 +686,8 @@
         </div>
       </div>
       
-      <div class="row justify-content-center pt-5 pb-5 mt-4">
-        <div class="col-11">
+      <div class="row justify-content-center pt-5 pb-5 mt-4 pl-0 pr-0 ">
+        <div class="col-12">
           <h1 class="title p-0">Smell it</h1>
           <h2 class="little-title p-0">taste it</h2>
         </div>
@@ -717,7 +721,7 @@
       </div>
       
       <div class="row justify-content-center mt-4 mb-0 pb-0">
-        <div class="col-12 pl-4 pr-4 pb-0 mb-0 pl-md-3 pr-md-3">
+        <div class="col-12 pl-2 pr-2 pb-0 mb-0 pl-md-3 pr-md-3">
           <p class="text">Lorem ipsum dolor sit amet, per at brute partem. Tota vidisse utroque sit ea, cum cu propriae appetere gloriatur. Dolore hendrerit in quo, fugit inani soleat vim ei. Nulla debitis laboramus in his, quo id delicata omittantur, delenit constituto at pri. Vim quis discere nominavi ex, qui ea dicat etiam definitiones. No adipisci tractatos quo. Ea tempor oblique habemus nec, sumo fierent vix cu. Cu prima malis sed, vidit nostro cu duo. No vix rebum habemus, eum at doming eleifend adversarium.</p>
         </div>
       </div>
@@ -743,7 +747,7 @@
             <div class="col-12">
               <h3 class="small-title p-0 m-0">Take it</h3>
               <h3 class="smaller-title">To your home</h3>
-            <div class="col-12 pl-4 pr-4 pb-0 mb-0 mt-4 pl-md-3 pr-md-3">
+            <div class="col-12 pl-2 pr-2 pb-0 mb-0 mt-4 pl-md-3 pr-md-3">
               <p class="text">Lorem ipsum dolor sit amet, per at brute partem. Tota vidisse utroque sit ea, cum cu propriae appetere gloriatur. Dolore hendrerit in quo, fugit inani soleat vim ei. Nulla debitis laboramus in his, quo id delicata omittantur, delenit constituto at pri.</p>
             </div>
             </div>
@@ -775,7 +779,7 @@
       </div>
       
       <div class="row justify-content-center mt-4 mb-0 pb-0">
-        <div class="col-12 pl-4 pr-4 pb-0 mb-0 pr-md-3 pl-md-3">
+        <div class="col-12 pl-2 pr-2 pb-0 mb-0 pr-md-3 pl-md-3">
           <p class="text">Lorem ipsum dolor sit amet, per at brute partem. Tota vidisse utroque sit ea, cum cu propriae appetere gloriatur. Dolore hendrerit in quo, fugit inani soleat vim ei. Nulla debitis laboramus in his, quo id delicata omittantur, delenit constituto at pri. Vim quis discere nominavi ex, qui ea dicat etiam definitiones. No adipisci tractatos quo. Ea tempor oblique habemus nec, sumo fierent vix cu. Cu prima malis sed, vidit nostro cu duo. No vix rebum habemus, eum at doming eleifend adversarium.</p>
         </div>
       </div>
