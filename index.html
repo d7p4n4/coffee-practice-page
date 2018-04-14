@@ -238,7 +238,8 @@
         font-family: oswald;
         font-size: 1.75rem;
         text-align: center;
-        letter-spacing: -.1rem;
+        letter-spacing: .1rem;
+        font-weight: 400;
       }
       
       .text {
@@ -341,6 +342,7 @@
         position: relative;
         left: 50%;
         transform: translateX(-50%);
+        max-width: 12.5rem;
       }
       
       .machine-col {
@@ -350,7 +352,7 @@
       .wrapper-5 {
         position: relative;
         width: 100%;
-        padding: .5rem 1rem 3rem 1rem;
+        padding: 2rem 1rem 2rem 1rem;
         background: rgb(240,240,240);
       }
       
@@ -379,7 +381,7 @@
           padding: 3rem 12rem;
         }
         .wrapper-5 {
-          padding: .5rem 12rem 3rem 12rem;
+          padding: 2rem 12rem 2rem 12rem;
         }
       }
       
@@ -408,6 +410,10 @@
       
       .coffe-bean {
         width: 100%;
+        max-width: 2.5rem;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
       }  
       
       @media (min-width: 1200px) {
@@ -448,6 +454,15 @@
       
       .blob-right {
         right: 50%;
+      }
+      
+      .blob-left {
+        left: 50%;
+      }
+      
+      .blob-right:hover,
+      .blob-left:hover {
+        animation: boxShadow ease 1.5s;
       }
       
       .facebook {
@@ -498,22 +513,28 @@
         border: .2rem solid rgb(250,250,250);
       }
       
-      .wrapper-7 .menu:hover + .blob-left {
+      .wrapper-7 .menu:hover + .blob-left-anim {
         animation: blob-left cubic-bezier(.56, 0, 1, 1) 1s .15s;
         animation-fill-mode: both;
       }
+      .blob-left-anim {
+        left: calc(50% - 9rem);
+      }
       
-      .wrapper-7 .menu:hover ~ .blob-right {
+      .wrapper-7 .menu:hover ~ .blob-right-anim {
         animation: blob-right cubic-bezier(.56, 0, 1, 1) 1s;
         animation-fill-mode: both;
       }
+      .blob-right-anim {
+        right: calc(50% - 9rem);
+      }
       
-      .blob-left {
+      .blob-left.none-left {
         animation: blob-left-disapp cubic-bezier(0, 0, .46, 1) 1s;
         animation-fill-mode: both;
       }
       
-      .blob-right {
+      .blob-right.none-right {
         animation: blob-right-disapp cubic-bezier(0, 0, .46, 1) 1s;
         animation-fill-mode: both;
         animation-delay: .15s;
@@ -569,7 +590,7 @@
           padding: 3rem 3rem;
         }
         .wrapper-5 {
-          padding: .5rem 3rem 3rem 3rem;
+          padding: 2rem 3rem 2rem 3rem;
         }
         .wrapper-6 {
           padding: 3rem 3rem;
@@ -610,7 +631,7 @@
           padding: 3rem 5rem;
         }
         .wrapper-5 {
-          padding: .5rem 5rem 3rem 5rem;
+          padding: 2rem 5rem 2rem 5rem;
         }
         .machine-col {
           display: block;
@@ -649,13 +670,106 @@
           line-height: 1.5rem;
         }
         .wrapper-5 {
-          padding: .5rem 9rem 3rem 9rem;
+          padding: 2rem 9rem 2rem 9rem;
         }
         .wrapper-6 {
           padding: 3rem 9rem;
         }
         .wrapper-7 {
           padding: 3rem 9rem 1rem 9rem;
+        }
+        
+      }
+
+      @media (min-width: 1444px) {
+        header {
+          padding: 2rem 15rem 0rem 15rem;
+        }
+        .drop {
+          width: calc(100% + 30rem);
+          left: -15rem;
+        }
+        .wrapper-2 {
+          padding: 2rem 15rem;
+        }
+        .wrapper-3 {
+          padding: 5rem 15rem;
+        }
+        .wrapper-4 {
+          padding: 3rem 15rem;
+        }
+        .wrapper-5 {
+          padding: 2rem 15rem 2rem 15rem;
+        }
+        .wrapper-6 {
+          padding: 3rem 15rem;
+        }
+        .wrapper-7 {
+          padding: 3rem 15rem 1rem 15rem;
+        }
+        
+      }
+
+      @media (min-width: 2200px) {
+        header {
+          padding: 2rem 20% 0rem 20%;
+        }
+        .logo {
+          font-size: 2.5rem;
+        }
+        .nav-btn {
+          font-size: 1.5rem;
+        }
+        .nav-btn::before {
+          top: 0%;
+          transform: translateY(-35%);
+          line-height: 6rem;
+          width: 6rem;
+          height: 6rem;
+          font-size: 1.5rem;
+          left: calc(50% - 3rem);
+        }
+        .drop {
+          width: 70vw;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 7rem;
+        }
+        .wrapper-2 {
+          padding: 2rem 20%;
+        }
+        .wrapper-3 {
+          padding: 5rem 20%;
+        }
+        .wrapper-4 {
+          padding: 3rem 20%;
+        }
+        .smaller-title {
+          font-size: 1.75rem;
+        }
+        .text {
+          font-size: .95rem;
+          line-height: 1.5rem;
+        }
+        .wrapper-5 {
+          padding: 2rem 20% 2rem 20%;
+        }
+        .wrapper-6 {
+          padding: 3rem 20%;
+        }
+        .wrapper-7 {
+          padding: 3rem 20% 1rem 20%;
+        }
+        
+        html {
+          background: rgb(160,115,82);
+        }
+        body {
+          position: relative;
+          margin: 10rem 0;
+          width: 70%;
+          left: 15%;
+          box-shadow: -3rem 5rem 7.5rem rgba(0,0,0,.4);
         }
         
       }
@@ -714,14 +828,14 @@
       </div>
       
       <div class="row justify-content-center mt-3 mb-4">
-        <div class="col-11">
+        <div class="col-12">
           <h3 class="small-title p-0 m-0">Discover our</h3>
           <h3 class="smaller-title">Distinctive style</h3>
         </div>
       </div>
       
       <div class="row justify-content-center mt-4 mb-0 pb-0">
-        <div class="col-12 pl-2 pr-2 pb-0 mb-0 pl-md-3 pr-md-3">
+        <div class="col-12 col-xl-10 pl-2 pr-2 pb-0 mb-0 pl-md-3 pr-md-3">
           <p class="text">Lorem ipsum dolor sit amet, per at brute partem. Tota vidisse utroque sit ea, cum cu propriae appetere gloriatur. Dolore hendrerit in quo, fugit inani soleat vim ei. Nulla debitis laboramus in his, quo id delicata omittantur, delenit constituto at pri. Vim quis discere nominavi ex, qui ea dicat etiam definitiones. No adipisci tractatos quo. Ea tempor oblique habemus nec, sumo fierent vix cu. Cu prima malis sed, vidit nostro cu duo. No vix rebum habemus, eum at doming eleifend adversarium.</p>
         </div>
       </div>
@@ -742,7 +856,7 @@
         <div class="col-6 align-self-center machine-col">
           <img src="assets/coffee-machine.png" class="img-fluid coffe-machine" alt="">
         </div>
-        <div class="col-12 col-md-6 p-0">
+        <div class="col-12 col-md-6 p-0 align-self-center">
           <div class="row justify-content-center">
             <div class="col-12">
               <h3 class="small-title p-0 m-0">Take it</h3>
@@ -779,7 +893,7 @@
       </div>
       
       <div class="row justify-content-center mt-4 mb-0 pb-0">
-        <div class="col-12 pl-2 pr-2 pb-0 mb-0 pr-md-3 pl-md-3">
+        <div class="col-12 col-xl-10 pl-2 pr-2 pb-0 mb-0 pr-md-3 pl-md-3">
           <p class="text">Lorem ipsum dolor sit amet, per at brute partem. Tota vidisse utroque sit ea, cum cu propriae appetere gloriatur. Dolore hendrerit in quo, fugit inani soleat vim ei. Nulla debitis laboramus in his, quo id delicata omittantur, delenit constituto at pri. Vim quis discere nominavi ex, qui ea dicat etiam definitiones. No adipisci tractatos quo. Ea tempor oblique habemus nec, sumo fierent vix cu. Cu prima malis sed, vidit nostro cu duo. No vix rebum habemus, eum at doming eleifend adversarium.</p>
         </div>
       </div>
@@ -833,6 +947,26 @@
         </div>
       </div>
     </div>
+      
+      <script>
+        window.onload = function() {
+          $(".big-blob").mouseenter(function() {
+            $(".blob-left").addClass("blob-left-anim");
+            $(".blob-right").addClass("blob-right-anim");
+            $(".blob-left").removeClass("none-left");
+            $(".blob-right").removeClass("none-right");
+          });
+          
+          $(".blobs").mouseleave(function() {
+            $(".blob-left").addClass("none-left");
+            $(".blob-right").addClass("none-right");
+            $(".blob-left").removeClass("blob-left-anim");
+            $(".blob-right").removeClass("blob-right-anim");
+            
+          })
+          
+        }
+      </script>
     
     <!-- Optional JavaScript --> 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
