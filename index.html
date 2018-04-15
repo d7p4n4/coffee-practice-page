@@ -53,7 +53,7 @@
       header {
         width: 100%;
         height: auto;
-        padding: 2rem 1rem 0rem 1rem;
+        padding: 2rem 1rem 3rem 1rem;
         background-image: url(assets/pic01.jpg);
         background-size: cover;
         background-repeat: no-repeat;
@@ -102,12 +102,6 @@
         cursor: pointer;
       }
       
-      @media (min-width: 1200px) {
-        header {
-          padding: 2rem 12rem 0rem 12rem;
-        }
-      }
-      
       .title {
         font-family: pacifico;
         font-size: 4.5rem;
@@ -134,13 +128,6 @@
         position: relative;
         left: -1rem;
         bottom: 0;
-      }
-      
-      @media (min-width: 1200px) {
-        .drop {
-          width: calc(100% + 24rem);
-          left: -12rem;
-        }
       }
       
       .down-btn {
@@ -204,7 +191,7 @@
       /* wrapper-2 */
       
       .wrapper-2 {
-        padding: 2rem 1rem 2rem 1rem;
+        padding: 0rem 1rem 2rem 1rem;
         background: rgb(250,250,250);
         position: relative;
         width: 100%;
@@ -220,7 +207,7 @@
         font-size: 1.5rem;
         position: absolute;
         z-index: 10;
-        top: 20%;
+        top: 50%;
         left: 50%;
         transform: translateX(-50%);
         transform-origin: center center;
@@ -252,7 +239,7 @@
       
       @media (min-width: 1200px) {
         .wrapper-2 {
-          padding: 2rem 12rem;
+          padding: 0rem 12rem;
         }
       }
       
@@ -572,7 +559,7 @@
       
       @media (min-width: 528px) {
         header {
-          padding: 2rem 3rem 0rem 3rem;
+          padding: 2rem 3rem 3rem 3rem;
         }
         .title {
           font-size: 5rem;
@@ -582,7 +569,7 @@
           left: -3rem;
         }
         .wrapper-2 {
-          padding: 2rem 3rem;
+          padding: 0rem 3rem 2rem;
         }
         .wrapper-3 {
           padding: 5rem 3rem;
@@ -603,7 +590,7 @@
       
       @media (min-width: 768px) {
         header {
-          padding: 2rem 5rem 0rem 5rem;
+          padding: 2rem 5rem 3rem 5rem;
         }
         .logo {
           text-align: left;
@@ -623,7 +610,7 @@
           left: -5rem;
         }
         .wrapper-2 {
-          padding: 2rem 5rem;
+          padding: 0rem 5rem 2rem;
         }
         .wrapper-3 {
           padding: 5rem 5rem;
@@ -648,7 +635,7 @@
       
       @media (min-width: 992px) {
         header {
-          padding: 2rem 9rem 0rem 9rem;
+          padding: 2rem 9rem 3rem 9rem;
           overflow: hidden;
         }
         .drop {
@@ -656,7 +643,7 @@
           left: -9rem;
         }
         .wrapper-2 {
-          padding: 2rem 9rem;
+          padding: 0rem 9rem 2rem;
         }
         .wrapper-3 {
           padding: 5rem 9rem;
@@ -683,16 +670,37 @@
         
       }
 
-      @media (min-width: 1444px) {
+      
+      @media (min-width: 1200px) {
         header {
-          padding: 2rem 15rem 0rem 15rem;
-        }
-        .drop {
-          width: calc(100% + 30rem);
-          left: -15rem;
+          padding: 2rem 12rem 3rem 12rem;
         }
         .wrapper-2 {
-          padding: 2rem 15rem;
+          padding: 0rem 12rem 2rem;
+        }
+        .wrapper-3 {
+          padding: 5rem 12rem;
+        }
+        .wrapper-4 {
+          padding: 3rem 12rem;
+        }
+        .wrapper-5 {
+          padding: 2rem 12rem 2rem 12rem;
+        }
+        .wrapper-6 {
+          padding: 3rem 12rem;
+        }
+        .wrapper-7 {
+          padding: 3rem 12rem 1rem 12rem;
+        }
+      }
+
+      @media (min-width: 1444px) {
+        header {
+          padding: 2rem 15rem 3rem 15rem;
+        }
+        .wrapper-2 {
+          padding: 0rem 15rem 2rem;
         }
         .wrapper-3 {
           padding: 5rem 15rem;
@@ -714,7 +722,7 @@
 
       @media (min-width: 2200px) {
         header {
-          padding: 2rem 20% 0rem 20%;
+          padding: 2rem 20% 3rem 20%;
         }
         .logo {
           font-size: 2.5rem;
@@ -731,14 +739,8 @@
           font-size: 1.5rem;
           left: calc(50% - 3rem);
         }
-        .drop {
-          width: 70vw;
-          left: 50%;
-          transform: translateX(-50%);
-          height: 7rem;
-        }
         .wrapper-2 {
-          padding: 2rem 20%;
+          padding: 0rem 20% 2rem;
         }
         .wrapper-3 {
           padding: 5rem 20%;
@@ -818,13 +820,12 @@
         </div>
       </div>
       
-      <div class="drop"></div>
     </header>
     
     <div class="wrapper-2">
       <div class="row justify-content-center">
         <div class="col-4 col-md-3 col-xl-2 p-0">
-          <img class="img-fluid cup" src="assets/cup.png" alt="">
+          <img class="img-fluid cup" src="assets/cup.svg" alt="">
           <h6 class="logo">Cafo</h6>
         </div>
       </div>
